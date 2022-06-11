@@ -1,6 +1,6 @@
 <?php
 
-use App\Http\Livewire\Abonne;
+use App\Http\Livewire\Gestions;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -19,11 +19,37 @@ use Illuminate\Support\Facades\Route;
     return view('auth.login');
  });
 
- Route::get('/admin', function () {
-    return view('layouts.index');
- });
+//  Route::get('/admin', function () {
+//     return view('layouts.master');
+//  });
 
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-Route::get("/utilisateurs",Abonne::class)->name("index");
+
+
+
+
+Route::group([
+    //ici 2 middlewire est utiliser pour securiser les routes
+    //le premier cest pour verifier l'authentification(auth)
+    //le deuxieme c'est pour verifier si l'utilisateur est admin
+
+    "middleware" => ["auth", "auth.directeur"], 
+
+
+    "as" => "directeur."],
+    function(){
+        Route::group([
+            "prefix" => "gestion",
+            "as"=>"gestion.",
+       ],
+       function(){
+           Route::get("/secretaires",Gestions::class)->name("secretaires.index");
+           //ceci a pour chemin (admin.habilitations.users.index)
+           //ceci a pour chemin (directeur.gestion.secretaires.index)
+         
+       });
+
+    }
+);

@@ -11,7 +11,7 @@ define("PAGEEDITFORM", "edit");
 define("DEFAULTPASSWORD" , "password");
 
 function userFullName(){
-    return auth()->user()->nom . ' ' . auth()->user()->prenom;
+    return auth()->user()->name;
 };
 
 //la fonction qui ecoute pour savoir l'etatde chaque classe
@@ -37,24 +37,24 @@ function setMenuActive($route){
     return "";
 };
 
-// function getRolesName(){
-//     $rolesName = "";
-//     $i = 0;
-//     foreach(auth()->user()->roles as $role){
-//         $rolesName .= $role->nom;
+function getRolesName(){
+    $rolesName = "";
+    $i = 0;
+    foreach(auth()->user()->roles as $role){
+        $rolesName .= $role->nom;
 
-//         //
-//         if($i < sizeof(auth()->user()->roles) - 1 ){
-//             $rolesName .= ",";
-//         }
+        //
+        if($i < sizeof(auth()->user()->roles) - 1 ){
+            $rolesName .= ",";
+        }
 
-//         $i++;
+        $i++;
 
-//     }
+    }
 
-//     return $rolesName;
+    return $rolesName;
 
-// }
+}
 
 // creons des constante define("nom" , ""valeur)
 // define("PAGELISTE" , "liste");

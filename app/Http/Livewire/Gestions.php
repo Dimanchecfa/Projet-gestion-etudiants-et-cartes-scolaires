@@ -5,7 +5,7 @@ namespace App\Http\Livewire;
 use App\Models\User;
 use Livewire\Component;
 
-class Abonne extends Component
+class Gestions extends Component
 {
     public $newUser= [];
     public function render()
@@ -18,7 +18,5 @@ class Abonne extends Component
     }
 
 
-   public function goToAddUser(){
-        return view('livewire.secretaires.index');
-    }
+
 }
