@@ -1,4 +1,7 @@
 <?php
+//les middleware sont egalements des portails qui permettent de controler si
+// le User authentifier a acces a une page ou une route
+//En resume les middleware permet de securiser nos routes
 
 namespace App\Http\Middleware;
 
@@ -18,13 +21,11 @@ class DirecteurMiddleware
      */
     public function handle(Request $request, Closure $next)
     {
-
-        //middleware qui protege les routes destines au directeur
-         if(Gate::allows("directeur")){
+        if(Gate::allows("directeur")){
             return $next($request);
         }
-        //si les routes ne sont pas destines a l'utilisateur xa le redirige vers la page d'acceuil
         return redirect()->route("home");
 
+      
     }
 }

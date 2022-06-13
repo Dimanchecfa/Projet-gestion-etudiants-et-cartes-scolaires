@@ -1,6 +1,6 @@
 @extends("layouts.master")
 
-@section("conten")
+@section("contenu")
 <div class="row">
     <div class="col-12 " style="height:120px">
         <div class="jumbotron ">

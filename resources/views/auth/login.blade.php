@@ -107,7 +107,7 @@
                                             </div>
                                             <div class=" row d-flex align-items-center justify-content-between mt-4 mb-0">
                                                 
-                                                <button class="btn btn-primary" typr="submit" href="">{{ __('Login') }}</button>
+                                                <button class="btn btn-danger" typr="submit" href="">{{ __('Login') }}</button>
                                             </div>
                                         </form>
                                     </div>

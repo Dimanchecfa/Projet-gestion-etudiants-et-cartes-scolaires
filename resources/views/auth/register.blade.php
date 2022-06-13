@@ -135,7 +135,7 @@
                                                 </div>
                                             </div>
                                             <div class="mt-4 mb-0">
-                                                <div class="d-grid"><button  type="submit" class="btn btn-primary btn-block" >{{ __('Register') }}</button></div>
+                                                <div class="d-grid"><button  type="submit" class="btn btn-danger btn-block" >{{ __('Register') }}</button></div>
                                             </div>
                                         </form>
                                     </div>

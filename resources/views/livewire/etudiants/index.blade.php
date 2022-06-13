@@ -2,22 +2,22 @@
 
 
 @if($currentPage == PAGELIST)
-  @include('livewire.secretaires.liste')'
+  @include('livewire.etudiants.liste')'
 @elseif ($currentPage == PAGECREATEFORM)
-    @include('livewire.secretaires.create')
+    @include('livewire.etudiants.create')
 @else
-    @include('livewire.secretaires.edit')
+    @include('livewire.etudiants.edit')
 @endif   
 {{--     @if($currentPage == PAGELIST)
-        @include("livewire.secretaires.liste")
+        @include("livewire.etudiants.liste")
     @endif
 
     @if($currentPage == PAGECREATEFORM)
-         @include("livewire.secretaires.create")
+         @include("livewire.etudiants.create")
     @endif
 
     @if($currentPage == PAGEEDITFORM)
-        @include("livewire.secretaires.edit")
+        @include("livewire.etudiants.edit")
     @endif --}}
  
 

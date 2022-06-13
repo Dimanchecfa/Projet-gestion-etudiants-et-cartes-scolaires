@@ -14,14 +14,18 @@
         <title>Sidenav Light - SB Admin</title>
         <link href="{{asset('css/styles.css')}}" rel="stylesheet" />
         <script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js" crossorigin="anonymous"></script>
+         <link href="https://cdn.jsdelivr.net/npm/simple-datatables@latest/dist/style.css" rel="stylesheet" />
+         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
         
+        
+         @livewireStyles
     </head>
-   <body>
-        <nav class="sb-topnav navbar navbar-expand  bg-primary">
+   <body class="sb-nav-fixed">
+        <nav class="sb-topnav navbar navbar-expand  bg-danger">
             <!-- Navbar Brand-->
             <p class="navbar-brand ps-3 text-light fw-bold" href="index.html">ESI-UNB</p>
             <!-- Sidebar Toggle-->
-         <!--    <button class="btn  btn-sm order-1 order-lg-0 me-4 me-lg-0 text-light fw-bold" id="sidebarToggle" href="#!"><i class="fas fa-bars"></i></button> -->
+         <button class="btn  btn-sm order-1 order-lg-0 me-4 me-lg-0 text-light fw-bold" id="sidebarToggle" href="#!"><i class="fas fa-bars"></i></button>
             <!-- Navbar Search-->
             <form class="d-none d-md-inline-block form-inline ms-auto me-0 me-md-3 my-2 my-md-0">
                 <div class="input-group">
@@ -55,7 +59,7 @@
                 <main>
                     <div class="container-fluid px-4 py-4">
                     
-                       @yield('conten')
+                       @yield('contenu')
                     </div>
                 </main>
             <x-foot/>
@@ -63,6 +67,16 @@
         </div>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
         <script src="{{asset('js/scripts.js')}}"></script>
+          <script src="https://cdn.jsdelivr.net/npm/simple-datatables@latest" crossorigin="anonymous"></script>
+          <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" ></script>
+          <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+        <script src="{{asset('js/datatables-simple-demo.js')}}"></script>
+        <script>
+            $(document).ready( function () {
+                 $('#myTable').DataTable();
+            } );
+        
+        </script>
         @livewireScripts
     </body>
 </html>
