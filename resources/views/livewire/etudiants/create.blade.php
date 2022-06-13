@@ -6,45 +6,99 @@
                                     <div class="card-body">
                                          <form role="form" wire:submit.prevent="addUser()">
                                                  @csrf
+                                            <div class="form-floating mb-3">
+                                                <input  wire:model="newStudent.matricule" class="form-control  @error('newStudent.matricule') is-invalid @enderror" id="inputEmail" type="email"value="{{ old('email') }}"  placeholder="name@example.com"  required autocomplete="email"/>
+                                                <label for="inputEmail">Matricule</label>
+                                                @error('newStudent.matricule')
+                                                   <span class="text-danger"> {{ $message}}</span>
+                                                   
+                                                    
+                                                @enderror
+                                            </div>
                                             <div class="row mb-3">
-                                                
+                                                <div class="col-md-6">
+                                                    
                                                     <div class="form-floating mb-3 mb-md-0">
-                                                        <input wire:model="newUser.name" class="form-control  @error('newUser.name') is-invalid @enderror" value="{{ old('newUser.name') }}" id="inputFirstName" type="text" placeholder="Enter votre Nom Complet" required autocomplete="nom"/>
+                                                        <input wire:model="newStudent.nom" class="form-control  @error('newStudent.nom') is-invalid @enderror" value="{{ old('newStudent.name') }}" id="inputFirstName" type="text" placeholder="Enter votre Nom Complet" required autocomplete="nom"/>
                                                         <label for="inputFirstName">Nom</label>
-                                                        @error('newUser.name')
+                                                        @error('newStudent.name')
                                                             <span class="text-danger"> {{ $message}}</span>
                                                         @enderror
                                                     </div>
+
+                                                
+                                                </div>
+                                                <div class="col-md-6">
+                                                    
+                                                    <div class="form-floating mb-3 mb-md-0">
+                                                        <input wire:model="newStudent.prenom" class="form-control  @error('newStudent.prenom') is-invalid @enderror" value="{{ old('newStudent.name') }}" id="inputFirstName" type="text" placeholder="Enter votre Nom Complet" required autocomplete="nom"/>
+                                                        <label for="inputFirstName">Prenom</label>
+                                                        @error('newStudent.prenom')
+                                                            <span class="text-danger"> {{ $message}}</span>
+                                                        @enderror
+                                                    </div>
+
+                                                
+                                                </div>
                                               
                                                
                                             </div>
                                             <div class="form-floating mb-3">
-                                                <input  wire:model="newUser.email" class="form-control  @error('newUser.email') is-invalid @enderror" id="inputEmail" type="email"value="{{ old('email') }}"  placeholder="name@example.com"  required autocomplete="email"/>
+                                                <input  wire:model="newStudent.email" class="form-control  @error('newStudent.email') is-invalid @enderror" id="inputEmail" type="email"value="{{ old('email') }}"  placeholder="name@example.com"  required autocomplete="email"/>
                                                 <label for="inputEmail">Email </label>
-                                                @error('newUser.email')
+                                                @error('newStudent.email')
                                                    <span class="text-danger"> {{ $message}}</span>
                                                     
                                                 @enderror
                                             </div>
                                            
+                                             <div class="row mb-3">
+                                                <div class="col-md-6">
+                                                    
                                                     <div class="form-floating mb-3 mb-md-0">
-                                                        <input      wire:model="newUser.password" class="form-control  @error('newUser.password') is-invalid @enderror" name="password" id="inputPassword" type="password" placeholder="Mot de passe" required autocomplete="new-password"/>
-                                                        <label for="inputPassword">Mot de passe</label>
-                                                        @error('newUser.password')
-                                                          <span class="text-danger"> {{ $message}}</span>
+                                                         
+                                                        <select id="slct1"  wire:model="newStudent.cycle" class="form-select @error("newStudent.cycle")
+                                                            is-invalide @enderror"disabled >
                                                             
+                                                            <option value="1">license</option>
+
+                                                            
+                           
+                                                        </select>
+                                                        <label id="slct1" style="font-size:20px">Cycle</label>
+                                                        @error('newStudent.cycle')
+                                                        <span class="text-danger"> {{ $message}}</span>
                                                         @enderror
                                                     </div>
+                                                   
+
+                                                
+                                                </div>
+                                                <div class="col-md-6">
+                                                    
+                                                   <div class="form-floating mb-3 mb-md-0">
+                                                         
+                                                         <select id="slct2" name="slct2"  wire:model="newStudent.niveau" class="form-select @error("newStudent.niveau")
+                                                            is-invalide @enderror" disabled>
+                                                               
+                                                          
+                                                            <option value="LICENSE 1">L1</option>
+                                                           
+                                                             
+                                                        </select>
+                                                        <label id="slct2" style="font-size:20px">Niveau</label>
+                                                       
+                                                        @error('newStudent.niveau')
+                                                        <span class="text-danger"> {{ $message}}</span>
+                                                        @enderror
+                                                    </div>
+
+                                                
+                                                </div>
+                                              
                                                
-                                                {{-- <div class="col-md-6">
-                                                    <div class="form-floating mb-3 mb-md-0">
-                                                        <input    class="form-control  @error('newUser.password_confirmation') is-invalid @enderror" name="password_confirmation" id="inputPasswordConfirm" type="password" placeholder="Confirm password"  required autocomplete="new-password" />
-                                                        <label for="inputPasswordConfirm">Confirmer mot de passe</label>
-                                                        @error('newUser.password_confirmation')
-                                                          <span class="text-danger"> {{ $message}}</span>
-                                                        @enderror
-                                                    </div>
-                                                </div> --}}
+                                            </div>
+                                               
                                             
                                             <div class="row mt-4 mb-0">
                                                 <div class="d-grid col-md-4"><button  type="submit"  class="btn btn-primary btn-block" >{{ __('INSCRIRE') }}</button></div>
@@ -59,3 +113,4 @@
                             </div>
                         </div>
                     </div>
+                    

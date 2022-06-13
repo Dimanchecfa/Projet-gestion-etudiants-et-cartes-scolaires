@@ -12,6 +12,7 @@ class Etudiants extends Component
 {
      use WithPagination;
     public $currentPage =PAGELIST;
+    public $newStudent =[];
     protected $paginationTheme = "bootstrap";
     public function render()
     {

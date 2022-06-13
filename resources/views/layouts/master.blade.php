@@ -77,6 +77,13 @@
             } );
         
         </script>
+        <script>
+
+
+
+
+
+</script>
         @livewireScripts
     </body>
 </html>

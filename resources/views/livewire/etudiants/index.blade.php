@@ -23,7 +23,6 @@
 
 </div>
 
-
 <script>
     window.addEventListener("showSuccessMessage", event=>{
         Swal.fire({
@@ -62,3 +61,4 @@
     })
 
 </script>
+
