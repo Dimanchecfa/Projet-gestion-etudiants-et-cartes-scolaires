@@ -52,8 +52,8 @@
         }).then((result) => {
         if (result.isConfirmed) {
             //delete user
-           if(event.detail.message.data){
-                @this.deleteUser(event.detail.message.data.user_id);
+           if($id){
+                @this.deleteStudent($id);
             }
               
         }

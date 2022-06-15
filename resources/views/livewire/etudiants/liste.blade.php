@@ -14,7 +14,7 @@
                               <p class="flex-grow-1 ">   <i class="fas fa-user"></i> Listes des etudiants</p>
                                  <a class="btn btn-link text-white mr-4 d-block" 
                          
-                           wire:click.prevent="goToAddUser()"><i class="fas fa-user-plus"></i>Nouvel etudiant
+                           wire:click.prevent="goToAddStudent()"><i class="fas fa-user-plus"></i>Nouvel etudiant
                            
                            
                            </a>
@@ -82,23 +82,24 @@
                               <td class="text-center"><span class="tag tag-success">
                                  {{$etudiant-> created_at->diffForHumans()}}</span>
                               </td>
-                              <td class="d-flex" >
+                              <td class="d-flex">
                               @can('directeur')
                                   
                              
                                  <button class="btn btn-link"
-                                   wire:click="confirmDelete('{{$etudiant->nom}}',{{$etudiant->prennom}}' {{$etudiant->id}})"
+                                   wire:click="confirmDelete('{{$etudiant->nom}}', {{$etudiant->id}})"
                                   >
                                    <i class="fas fa-trash-alt"></i>
                               </button>
                                
                               <button class="btn btn-link" 
-                              wire:click.prevent="goToEditUser({{$etudiant->id}})" 
+                              wire:click.prevent="goToEditStudent({{$etudiant->id}})" 
                               >
                                  <i class="fas fa-edit"></i>
                               </button>
                                @endcan
-                               <button class="btn btn-link" wire:click=""> <i class="fas fa-save "></i>
+                               <button class="btn btn-link" wire:click=" ">
+                                 <i class="fas fa-save "></i>
                               </button>
                               </td>
                            </tr>

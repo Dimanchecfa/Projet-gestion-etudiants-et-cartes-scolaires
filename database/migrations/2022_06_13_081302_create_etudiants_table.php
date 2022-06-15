@@ -19,8 +19,13 @@ class CreateEtudiantsTable extends Migration
             $table->string('nom');
             $table->string('prenom');
             $table->string('email');
+            //annnee academique
+            $table->string('annee_academique');
             $table->string('cycle');
             $table->string('niveau');
+            //file
+
+
             $table->timestamps();
         });
     }
