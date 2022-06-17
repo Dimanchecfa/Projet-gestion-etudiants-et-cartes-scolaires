@@ -52,12 +52,12 @@ return [
             'endpoint' => env('AWS_ENDPOINT'),
             'use_path_style_endpoint' => env('AWS_USE_PATH_STYLE_ENDPOINT', false),
         ],
-          'avatars' => [
-            'driver' => 'local',
-            'root' => storage_path('app/public/avatars'),
-            'url' => env('APP_URL').'/storage/avatars',
-            'visibility' => 'public',
-        ],
+        //   'avatars' => [
+        //     'driver' => 'local',
+        //     'root' => storage_path('app/public/avatars'),
+        //     'url' => env('APP_URL').'/storage/avatars',
+        //     'visibility' => 'public',
+        // ],
 
     ],
 
@@ -74,7 +74,8 @@ return [
 
     'links' => [
         public_path('storage') => storage_path('app/public'),
-        public_path('storage/avatars') => storage_path('app/public/avatars'),
+        //le dossier storage qui est dans le dosier public ast ler avec le doossier public qui est dans le storage securite
+        // public_path('storage/avatars') => storage_path('app/public/avatars'),
     ],
 
 ];

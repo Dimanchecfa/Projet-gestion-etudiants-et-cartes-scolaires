@@ -111,8 +111,15 @@
                                             </div>
                                         </form>
                                     </div>
+                                   
+                                  
                                     <div class="card-footer text-center py-3">
-                                        <div class="small"><a href="{{route('register')}}">Aviez-vous deja un compte? Inscrivez-vous!</a></div>
+                                       
+
+                                      
+                                            <div class="small"><a href="{{route('register')}}">Aviez-vous deja un compte? Inscrivez-vous!</a></div>
+                                            
+                                        
                                     </div>
                                 </div>
                             </div>

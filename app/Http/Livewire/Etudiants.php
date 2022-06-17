@@ -11,12 +11,16 @@ class Etudiants extends Component
    
   
 {
+    //verifier si une table est vide
+    
+
      use WithPagination;
      use WithFileUploads;
     public $currentPage =PAGELIST;
     public $newStudent =[];
-    public $photo;
+    public $addPhoto;
     protected $paginationTheme = "bootstrap";
+
     public function render()
     {
         return view('livewire.etudiants.index', [
@@ -38,10 +42,12 @@ class Etudiants extends Component
                 'editStudent.annee_academique' => 'required',
                 "editStudent.cycle" => "required",
                 'editStudent.niveau' => 'required',
+                'editStudent.imageUrl' => "image|max:10240",
                 
                 
             ];
-        }
+            }
+        
 
         return [
             'newStudent.matricule' => 'required' ,
@@ -51,6 +57,7 @@ class Etudiants extends Component
             'newStudent.annee_academique' => 'required' ,
             'newStudent.cycle' => 'required' ,
             'newStudent.niveau' => 'required' ,
+            'addPhoto' => "image|max:10240"
             
             
         ];
@@ -74,29 +81,48 @@ class Etudiants extends Component
      public function goToAddStudent(){
         $this->currentPage = PAGECREATEFORM;
     }
+     public function goToCard(){
+        $this->currentPage = PAGECARTE;
+    }
        
     public function goToListStudent(){
         
         $this->currentPage = PAGELIST;
         $this->editStudent = [];
     }
+        //verifier si une table est vide
+        //verifier si la table users  est vide
+        //verifier si la table etudiants est vide
+
+        
+      
 
     public function addStudent(){
       $validationAttributes = $this->validate();
       $validationAttributes['newStudent'];
-      if ($this->photo) {
-			$validationAttributes['newStudent']['avatar'] = $this->photo->store( '/' ,'avatars'. '/'. $this->newStudent['id']);
+      $imagePath = "";
+     if ($this->addPhoto !== null) {
+       $imagePath = $this->addPhoto->store('uploads', 'public'); 
        
-  
+     }
 
      
 
     
-    //  Etudiant::create($validationAttributes['newStudent']);
+    // //  Etudiant::create($validationAttributes['newStudent']);
       
      
-    }
-     Etudiant::create($validationAttributes['newStudent']);
+    // }
+      Etudiant::create([
+        "matricule"=> $validationAttributes["newStudent"]["matricule"],
+        'nom' => $validationAttributes['newStudent']['nom'],
+        'prenom' => $validationAttributes['newStudent']['prenom'],
+        'email' => $validationAttributes['newStudent']['email'],
+        'annee_academique' => $validationAttributes['newStudent']['annee_academique'],
+        'cycle' => $validationAttributes['newStudent']['cycle'],
+        'niveau' => $validationAttributes['newStudent']['niveau'],
+        'imageUrl' => $imagePath
+     ]);
          $this->newStudent = [];
             $this->goToListStudent();
 

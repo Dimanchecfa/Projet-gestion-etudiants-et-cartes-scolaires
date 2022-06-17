@@ -98,7 +98,7 @@
                                  <i class="fas fa-edit"></i>
                               </button>
                                @endcan
-                               <button class="btn btn-link" wire:click=" ">
+                               <button class="btn btn-link" wire:click="goToCard()">
                                  <i class="fas fa-save "></i>
                               </button>
                               </td>

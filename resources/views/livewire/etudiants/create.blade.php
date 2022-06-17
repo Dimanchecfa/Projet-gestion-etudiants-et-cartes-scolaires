@@ -122,12 +122,12 @@
                                               
                                                
                                             </div>
-                                             <div class="form-group mb-3">
+                                             <div class="form-group mb-3 mb-md-0">
                                              <label for="formFileLg" class="form-label">Profil</label>
-                                             <input wire:model="photo" class="form-control form-control-lg  @error('newStudent.avatar') is-invalid @enderror" id="formFileLg" type="file">
+                                             <input wire:model="addPhoto" class="form-control form-control-lg  @error('newStudent.imageUrl') is-invalid @enderror" id="formFileLg" type="file">
                                                 {{-- <input  wire:model="newStudent.profil" class="form-control  @error('newStudent.profil') is-invalid @enderror" id="inputFiles" type="file" value="{{ old('email') }}"  placeholder="name@example.com"  required autocomplete="email" />
                                                 <label for="inpuEmail">profil </label> --}}
-                                                @error('newStudent.avatar')
+                                                @error('newStudent.imageUrl')
                                                    <span class="text-danger"> {{ $message}}</span>
                                                     
                                                 @enderror

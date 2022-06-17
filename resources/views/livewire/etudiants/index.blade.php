@@ -5,6 +5,8 @@
   @include('livewire.etudiants.liste')'
 @elseif ($currentPage == PAGECREATEFORM)
     @include('livewire.etudiants.create')
+@elseif ($currentPage == PAGECARTE)
+    @include('livewire.etudiants.carte')
 @else
     @include('livewire.etudiants.edit')
 @endif   

@@ -71,12 +71,50 @@
           <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" ></script>
           <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
         <script src="{{asset('js/datatables-simple-demo.js')}}"></script>
+         <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
         <script>
             $(document).ready( function () {
                  $('#myTable').DataTable();
             } );
         
         </script>
+  <script>    
+ 
+    function downloadtable() {
+
+        var node = document.getElementById('mycard');
+
+        domtoimage.toPng(node)
+            .then(function (dataUrl) {
+                var img = new Image();
+                img.src = dataUrl;
+                downloadURI(dataUrl, "staff-id-card.png")
+            })
+            .catch(function (error) {
+                console.error('oops, something went wrong', error);
+            });
+             alert('bonjour');
+
+    }
+
+
+
+    function downloadURI(uri, name) {
+        var link = document.createElement("a");
+        link.download = name;
+        link.href = uri;
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+        delete link;
+    }
+
+
+
+</script>
         <script>
 
 

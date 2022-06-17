@@ -23,6 +23,7 @@ class CreateEtudiantsTable extends Migration
             $table->string('annee_academique');
             $table->string('cycle');
             $table->string('niveau');
+             $table->string("imageUrl")->nullable();
             //file
 
 
